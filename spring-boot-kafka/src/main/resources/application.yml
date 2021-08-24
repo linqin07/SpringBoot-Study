@@ -1,0 +1,20 @@
+kafka:
+# 逗号追加集群
+  borkers: 192.168.13.32:9092
+
+#====================================================kafka配置
+spring:
+  kafka:
+    bootstrap-servers: 192.168.13.32:9092
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      group-id: ivory
+      key-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      max-poll-records: 4000
+      security-topic: ivory_security
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    producer:
+      acks: 1
+      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer

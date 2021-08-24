@@ -1,0 +1,20 @@
+                                                                   
+                                                                   
+LLLLLLLLLLL                  OOOOOOOOO     LLLLLLLLLLL             
+L:::::::::L                OO:::::::::OO   L:::::::::L             
+L:::::::::L              OO:::::::::::::OO L:::::::::L             
+LL:::::::LL             O:::::::OOO:::::::OLL:::::::LL             
+  L:::::L               O::::::O   O::::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L               O:::::O     O:::::O  L:::::L               
+  L:::::L         LLLLLLO::::::O   O::::::O  L:::::L         LLLLLL
+LL:::::::LLLLLLLLL:::::LO:::::::OOO:::::::OLL:::::::LLLLLLLLL:::::L
+L::::::::::::::::::::::L OO:::::::::::::OO L::::::::::::::::::::::L
+L::::::::::::::::::::::L   OO:::::::::OO   L::::::::::::::::::::::L
+LLLLLLLLLLLLLLLLLLLLLLLL     OOOOOOOOO     LLLLLLLLLLLLLLLLLLLLLLLLsd
+                                                                   
+${application.version}                                                                                                                                                                                                                                                                                                                                                                       

@@ -1,0 +1,34 @@
+logging:
+  level:
+    com:
+      dao:
+        UserMapper: debug
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.pojo
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      pool-name: DatebookHikariCP
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/mybatis
+    username: root
+#使用ServletFileUpload上传文件
+  session:
+    store-type: redis
+    redis:
+      flush-mode: immediate
+  servlet:
+    multipart:
+      enabled: false
