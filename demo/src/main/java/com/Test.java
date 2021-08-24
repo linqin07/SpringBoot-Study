@@ -31,7 +31,7 @@ public class Test {
         List<Long> longs = Arrays.asList(loo);
 //        List long2 = Lists.newArrayList(loo);
         List long2 = new ArrayList(Arrays.asList(loo));
-        System.out.println(long2);
+//        System.out.println(long2);
 
         String s = list.stream().reduce("a232rrr",(i1, i2) -> i1 += i2);
         System.out.println(s);
