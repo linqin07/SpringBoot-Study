@@ -24,11 +24,7 @@ public class Task {
     public void task() {
         System.out.println("定时执行任务！！");
         Map<String, String> data = Maps.newHashMap();
-        data.put("ivorynew5", "ivorynew5 [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
-        data.put("ivorynew4", "ivorynew4 [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
-        data.put("ivorynew3", "ivorynew3 [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
-        data.put("ivorynew2", "ivorynew2 [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
-        data.put("ivorynew1", "ivorynew1 [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
+        data.put("aaa", "test [1029/095526.010:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)\n");
         setTopicData(data);
         System.out.println("hhhhh");
 

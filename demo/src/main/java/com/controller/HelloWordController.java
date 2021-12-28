@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.NotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
 /**
- * Description:
+ * Description: 这里是描述
+ * @date
  * author: LinQin
  * date: 2018/07/03
  */
@@ -56,9 +58,17 @@ public class HelloWordController {
         return "testJRebel";
     }
 
+    /**
+     * 接口用来test，哈哈哈哈哈
+     * 草拟吗
+     * @param xxx Stirng xxx
+     * @param map 这是一个map
+     * @param www Long
+     * @return
+     */
     @RequestMapping("/hello")
     @ResponseBody
-    public String hello() {
+    public String hello(@NotNull String xxx, Map<String, Object> map, Long www) {
         return "hello";
     }
 

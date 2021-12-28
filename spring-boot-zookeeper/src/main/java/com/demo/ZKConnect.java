@@ -50,10 +50,10 @@ public class ZKConnect implements Watcher {
 
         //自定义用户认证访问
 //        List<ACL> acls = new ArrayList<>();
-//        Id lin = new Id("digest", DigestAuthenticationProvider.generateDigest("ivory:ivory"));
+//        Id lin = new Id("digest", DigestAuthenticationProvider.generateDigest("test:test"));
 //        acls.add(new ACL(ZooDefs.Perms.ALL, lin));
 //        zk.create("/lin", "qin".getBytes(), acls, CreateMode.PERSISTENT);
-//        zk.addAuthInfo("digest", "ivory:ivory".getBytes());
+//        zk.addAuthInfo("digest", "test:test".getBytes());
 
 //        List<ACL> aclsIP = new ArrayList<>();
 //        Id ipId1 = new Id("ip", "127.0.0.1");

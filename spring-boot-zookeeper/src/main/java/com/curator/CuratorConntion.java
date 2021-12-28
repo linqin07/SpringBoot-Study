@@ -74,7 +74,7 @@ public class CuratorConntion {
         client = CuratorFrameworkFactory.builder().connectString(zkServerPath)
                 .sessionTimeoutMs(60000)
                 .retryPolicy(retryPolicy1)
-                .authorization("digest", "ivory:ivory".getBytes())
+                .authorization("digest", "test:test".getBytes())
                 .build();
 
         client.start();
