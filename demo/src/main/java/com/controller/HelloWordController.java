@@ -3,12 +3,9 @@ package com.controller;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.constraints.NotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,14 +58,19 @@ public class HelloWordController {
     /**
      * 接口用来test，哈哈哈哈哈
      * 草拟吗
+     *
      * @param xxx Stirng xxx
      * @param map 这是一个map
      * @param www Long
      * @return
      */
-    @RequestMapping("/hello")
+    @PostMapping("/hello")
     @ResponseBody
-    public String hello(@NotNull String xxx, Map<String, Object> map, Long www) {
+    public String hello(Long www) throws InterruptedException {
+        System.out.println(www);
+        Thread thread = Thread.currentThread();
+        System.out.println(thread.getName() + " 执行！");
+        Thread.sleep(10000);
         return "hello";
     }
 
