@@ -1,0 +1,5 @@
+spring:
+redis:
+  cluster:
+    nodes: 192.168.33.60:7000,192.168.33.60:7001
+  password: shsnc123456
