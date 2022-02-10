@@ -16,6 +16,8 @@ public class SpringBootMybatisApplicationTests {
     public void contextLoads() {
         User user = new User(1, "12", "name");
         UserDTO convert = UserConvert.INSTANCE.convert(user);
+
+
         System.out.println(convert);
     }
 
