@@ -13,7 +13,8 @@ public interface UserConvert {
     UserConvert INSTANCE = Mappers.getMapper(UserConvert.class);
 
     @Mappings({
-            @Mapping(source = "userId", target = "userId"),
+            // 转化的名称如果一样，写不写都一样
+//            @Mapping(source = "userId", target = "userId"),
             @Mapping(source = "userAge", target = "userAge", ignore = true),
             @Mapping(source = "userName", target = "userName", qualifiedByName = "toJsonString"),
     })
