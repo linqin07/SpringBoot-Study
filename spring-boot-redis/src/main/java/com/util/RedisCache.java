@@ -36,6 +36,10 @@ public class RedisCache<K, V> {
     }
 
 
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public static class Builder {
         private JsonRedisTemplate jsonRedisTemplate;
 

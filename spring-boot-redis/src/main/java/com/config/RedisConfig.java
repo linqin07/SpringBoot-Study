@@ -2,6 +2,7 @@ package com.config;
 
 import io.lettuce.core.cluster.ClusterClientOptions;
 import io.lettuce.core.cluster.ClusterTopologyRefreshOptions;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -62,50 +63,27 @@ public class RedisConfig {
                 .clientOptions(clusterClientOptions);
 
         //连接池配置
-//        RedisProperties.Pool pool = redisProperties.getLettuce().getPool();
-//        if (pool != null) {
-//            GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
-//            genericObjectPoolConfig.setMaxIdle(pool.getMaxIdle());
-//            genericObjectPoolConfig.setMinIdle(pool.getMinIdle());
-//            genericObjectPoolConfig.setMaxTotal(pool.getMaxActive());
-//            genericObjectPoolConfig.setMaxWaitMillis(pool.getMaxWait().toMillis());
-//            builder.poolConfig(genericObjectPoolConfig);
-//        }
+       RedisProperties.Pool pool = redisProperties.getLettuce().getPool();
+       if (pool != null) {
+           GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
+           genericObjectPoolConfig.setMaxIdle(pool.getMaxIdle());
+           genericObjectPoolConfig.setMinIdle(pool.getMinIdle());
+           genericObjectPoolConfig.setMaxTotal(pool.getMaxActive());
+           genericObjectPoolConfig.setMaxWaitMillis(pool.getMaxWait().toMillis());
+           builder.poolConfig(genericObjectPoolConfig);
+       }
 
         // https://github.com/lettuce-io/lettuce-core/wiki/ReadFrom-Settings
         LettuceClientConfiguration lettuceClientConfiguration = builder.build();
         return new LettuceConnectionFactory(redisClusterConfiguration, lettuceClientConfiguration);
     }
 
-    //    @Bean(name = "jsonRedisTemplate")
-//    @ConditionalOnMissingBean(name = {"jsonRedisTemplate"})
-//    public RedisTemplate<String, Object> jsonRedisTemplate(RedisConnectionFactory factory) {
-//        RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
-//        template.setConnectionFactory(factory);
-//        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-//        ObjectMapper om = new ObjectMapper();
-//        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-//        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-//        jackson2JsonRedisSerializer.setObjectMapper(om);
-//        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-//        // key采用String的序列化方式
-//        template.setKeySerializer(stringRedisSerializer);
-//        // hash的key也采用String的序列化方式
-//        template.setHashKeySerializer(stringRedisSerializer);
-//        // value序列化方式采用jackson
-//        template.setValueSerializer(jackson2JsonRedisSerializer);
-//        // hash的value序列化方式采用jackson
-//        template.setHashValueSerializer(jackson2JsonRedisSerializer);
-//        template.afterPropertiesSet();
-//        return template;
-//    }
+
     @Bean(name = "jsonRedisTemplate")
     public <T> JsonRedisTemplate<T> jsonRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
         JsonRedisTemplate<T> redisTemplate = new JsonRedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         return redisTemplate;
     }
-
-
 }
 
